@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10141/LoginService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ReviewerLite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReviewerEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewerFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewerLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewerPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewerUserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReviewerLite" nillable="true" type="tns:ReviewerLite" />
+  <xs:complexType name="NewBook">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Authors" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Categories" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ISBN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewBook" nillable="true" type="tns:NewBook" />
+  <xs:complexType name="NewReview">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BookTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rating" type="xs:int" />
+      <xs:element minOccurs="0" name="ReviewText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewerKey" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewReview" nillable="true" type="tns:NewReview" />
+</xs:schema>

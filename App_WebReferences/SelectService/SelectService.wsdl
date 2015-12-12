@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SelectService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:15347/SelectService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:15347/SelectService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:15347/SelectService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:15347/SelectService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISelectService_GetBooks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooks" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetBooks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetAuthors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthors" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetAuthors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetReviewers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReviewers" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetReviewers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReviewersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetReviewsByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReviewsByCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetReviewsByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReviewsByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetReviewsByAuthor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReviewsByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetReviewsByAuthor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReviewsByAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetGetReviewsByReviewer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGetReviewsByReviewer" />
+  </wsdl:message>
+  <wsdl:message name="ISelectService_GetGetReviewsByReviewer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGetReviewsByReviewerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISelectService">
+    <wsdl:operation name="GetBooks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISelectService/GetBooks" message="tns:ISelectService_GetBooks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISelectService/GetBooksResponse" message="tns:ISelectService_GetBooks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthors">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISelectService/GetAuthors" message="tns:ISelectService_GetAuthors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISelectService/GetAuthorsResponse" message="tns:ISelectService_GetAuthors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReviewers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISelectService/GetReviewers" message="tns:ISelectService_GetReviewers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISelectService/GetReviewersResponse" message="tns:ISelectService_GetReviewers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISelectService/GetCategories" message="tns:ISelectService_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISelectService/GetCategoriesResponse" message="tns:ISelectService_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReviewsByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISelectService/GetReviewsByCategory" message="tns:ISelectService_GetReviewsByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISelectService/GetReviewsByCategoryResponse" message="tns:ISelectService_GetReviewsByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReviewsByAuthor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISelectService/GetReviewsByAuthor" message="tns:ISelectService_GetReviewsByAuthor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISelectService/GetReviewsByAuthorResponse" message="tns:ISelectService_GetReviewsByAuthor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGetReviewsByReviewer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISelectService/GetGetReviewsByReviewer" message="tns:ISelectService_GetGetReviewsByReviewer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISelectService/GetGetReviewsByReviewerResponse" message="tns:ISelectService_GetGetReviewsByReviewer_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISelectService" type="tns:ISelectService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBooks">
+      <soap:operation soapAction="http://tempuri.org/ISelectService/GetBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthors">
+      <soap:operation soapAction="http://tempuri.org/ISelectService/GetAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReviewers">
+      <soap:operation soapAction="http://tempuri.org/ISelectService/GetReviewers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="http://tempuri.org/ISelectService/GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReviewsByCategory">
+      <soap:operation soapAction="http://tempuri.org/ISelectService/GetReviewsByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReviewsByAuthor">
+      <soap:operation soapAction="http://tempuri.org/ISelectService/GetReviewsByAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGetReviewsByReviewer">
+      <soap:operation soapAction="http://tempuri.org/ISelectService/GetGetReviewsByReviewer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SelectService">
+    <wsdl:port name="BasicHttpBinding_ISelectService" binding="tns:BasicHttpBinding_ISelectService">
+      <soap:address location="http://localhost:15347/SelectService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
